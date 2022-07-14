@@ -16,3 +16,5 @@ jobs:
         run: echo "Set environment variable"
       - name: 'Print env MESSAGE'
         run: echo "$MESSAGE"
+      - name: 'Check MESSAGE exists'
+        run: printenv | grep MESSAGE
