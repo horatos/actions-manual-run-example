@@ -9,13 +9,10 @@ jobs:
   print-message:
     runs-on: ubuntu-latest
     steps:
-      - name: 'Print the message from inputs'
-        run: echo "inputs.message: " ${{ inputs.message }}
-    steps:
       - name: 'Set ENV if inputs given'
         if: ${{ inputs.message != '' }}
         env:
           MESSAGE: ${{ inputs.message }}
-    steps:
+        run: echo "Set environment variable"
       - name: 'Print env MESSAGE'
         run: echo "$MESSAGE"
